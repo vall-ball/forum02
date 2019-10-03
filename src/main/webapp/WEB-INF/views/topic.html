@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Форум</title>
+</head>
+<body>
+
+<h1 th:text="${theme}">Тема</h1>
+<table  width="100%" border="2">
+<tbody>
+<tr th:each="m : ${topicMessages}">
+ 		<td width=100> <p th:text="${m.user}">Пользователь</p>
+ 		<p><img th:src="${m.user.picture}" style="width:50px;height:50px"></p>
+ 		<p th:text="${m.date}">Дата</p>
+ 		<p th:text="${m.time}">Время </p>
+ 		<td th:text="${m.mess}">Сообщение</td>
+ </tr>
+</tbody>
+</table>
+
+<form action="#" th:action="@{/addMessage}" method="post">
+	 <p><b>Вбей свой пост</b></p>
+  	 <p><textarea cols="40" rows="3" type="text" th:value="${message.mess}" name="mess"></textarea></p>
+  	 <p><button type="submit" value="Submit">Добавить ответ</button>  </p>
+  </form>
+</body>
+</html>

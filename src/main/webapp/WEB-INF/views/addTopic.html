@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Создание новой темы</title>
+</head>
+<body>
+
+
+<div><h1>Создание новой темы</h1></div>
+
+<form action="#" th:action="@{/addTopic}" method="post">
+	 <p><b>Введите название темы</b></p>
+  	 <p><input type="text" th:value="${topic.topicname}" name="topicname"></p>
+  	 <p><b>Вбей первый пост</b></p>
+  	 <p><textarea cols="40" rows="3" type="text" th:value="${message.mess}" name="mess"></textarea></p>
+  	 <p><button type="submit" value="Submit">Создать тему</button>  </p>
+  </form>
+
+
+</body>
+</html>
